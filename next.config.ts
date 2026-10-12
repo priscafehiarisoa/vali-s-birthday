@@ -7,7 +7,11 @@ const nextConfig: NextConfig = {
   },
   cacheComponents: true,
   partialPrefetching: true,
-  serverExternalPackages: ["better-sqlite3"],
+  serverExternalPackages: ["@libsql/client"],
+  // The schema is read at runtime, make sure Vercel ships it with the API routes
+  outputFileTracingIncludes: {
+    "/api/**": ["./data/schema.sql"],
+  },
   // Lets you test the dev server from a phone on the same Wi-Fi
   allowedDevOrigins: ["192.168.*.*", "10.*.*.*"],
   turbopack: {

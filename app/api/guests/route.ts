@@ -10,7 +10,7 @@ export async function POST(req: Request) {
   if (!name || name.length > 100 || allergies.length > 1000) {
     return NextResponse.json({ error: "invalid" }, { status: 400 });
   }
-  addGuest(name, allergies || null);
+  await addGuest(name, allergies || null);
   return NextResponse.json({ ok: true }, { status: 201 });
 }
 
@@ -18,5 +18,5 @@ export async function GET() {
   if (!(await isAuthed())) {
     return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   }
-  return NextResponse.json({ guests: listGuests() });
+  return NextResponse.json({ guests: await listGuests() });
 }

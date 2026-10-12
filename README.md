@@ -1,6 +1,6 @@
 # 🐱🌙 Vali's Pyjama Party — RSVP
 
-Next.js (App Router) + TypeScript + Tailwind + Framer Motion + SQLite (`better-sqlite3`).
+Next.js (App Router) + TypeScript + Tailwind + Framer Motion + SQLite via `@libsql/client` (local file in dev, [Turso](https://turso.tech) in production).
 
 ## Getting started
 
@@ -48,4 +48,11 @@ scripts/set-password.mjs
 public/cats/            your cat GIFs
 ```
 
-Note: SQLite needs a persistent disk — host on a VPS / Railway / Fly.io rather than Vercel serverless.
+## Deploying on Vercel
+
+Vercel's disk is read-only, so production uses a hosted Turso database:
+
+1. `turso db create vali-birthday`, then `turso db show vali-birthday --url` and `turso db tokens create vali-birthday`
+2. In Vercel → Settings → Environment Variables: `TURSO_DATABASE_URL`, `TURSO_AUTH_TOKEN`, `SESSION_SECRET` (and optionally `GUEST_PAGE_PASSWORD`)
+3. Redeploy. Tables are created on the first request.
+4. Optional: copy local contacts/guests to Turso with `npm run db:push` (Turso vars in `.env`).

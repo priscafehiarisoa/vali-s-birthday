@@ -7,11 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "set-password": "node --env-file-if-exists=.env scripts/set-password.mjs"
+    "set-password": "node --env-file-if-exists=.env scripts/set-password.mjs",
+    "db:push": "node --env-file-if-exists=.env scripts/push-local-to-turso.mjs"
   },
   "dependencies": {
+    "@libsql/client": "^0.18.0",
     "@tabler/icons-react": "^3.49.0",
-    "better-sqlite3": "^13.0.3",
     "canvas-confetti": "^1.9.4",
     "framer-motion": "^14.1.0",
     "next": "16.4.0",
@@ -20,7 +21,6 @@
   },
   "devDependencies": {
     "@tailwindcss/turbopack": "^4",
-    "@types/better-sqlite3": "^9.6.0",
     "@types/canvas-confetti": "^1.9.0",
     "@types/node": "^20",
     "@types/react": "^19",

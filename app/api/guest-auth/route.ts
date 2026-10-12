@@ -6,11 +6,11 @@ export async function POST(req: Request) {
   const body = await req.json().catch(() => null);
   const password = typeof body?.password === "string" ? body.password : "";
 
-  if (!checkGuestPassword(password)) {
+  if (!(await checkGuestPassword(password))) {
     return NextResponse.json({ error: "wrong_password" }, { status: 401 });
   }
   const res = NextResponse.json({ ok: true });
-  res.cookies.set(COOKIE, sessionToken(), {
+  res.cookies.set(COOKIE, await sessionToken(), {
     httpOnly: true,
     sameSite: "lax",
     secure: process.env.NODE_ENV === "production",

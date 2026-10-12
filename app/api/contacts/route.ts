@@ -6,7 +6,7 @@ const digits = (s: string) => s.replace(/\D/g, "");
 
 // Public: guests need the numbers on /info.
 export async function GET() {
-  return NextResponse.json({ contacts: listContacts() });
+  return NextResponse.json({ contacts: await listContacts() });
 }
 
 export async function POST(req: Request) {
@@ -22,8 +22,8 @@ export async function POST(req: Request) {
   if (!name || !digits(phone) || name.length > 100 || role.length > 100 || phone.length > 30) {
     return NextResponse.json({ error: "invalid" }, { status: 400 });
   }
-  addContact({ name, role: role || null, phone, whatsapp: whatsapp || null });
-  return NextResponse.json({ contacts: listContacts() }, { status: 201 });
+  await addContact({ name, role: role || null, phone, whatsapp: whatsapp || null });
+  return NextResponse.json({ contacts: await listContacts() }, { status: 201 });
 }
 
 export async function DELETE(req: Request) {
@@ -31,6 +31,6 @@ export async function DELETE(req: Request) {
 
   const id = Number(new URL(req.url).searchParams.get("id"));
   if (!Number.isInteger(id)) return NextResponse.json({ error: "invalid" }, { status: 400 });
-  deleteContact(id);
-  return NextResponse.json({ contacts: listContacts() });
+  await deleteContact(id);
+  return NextResponse.json({ contacts: await listContacts() });
 }

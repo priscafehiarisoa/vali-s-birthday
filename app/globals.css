@@ -1,26 +1,47 @@
 @import "tailwindcss";
 
+/* Default values; overridden by the `theme` block of data/content.json (see app/layout.tsx) */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --c-bg: #fdf2f8;
+  --c-bg-alt: #ede9fe;
+  --c-primary: #f9a8d4;
+  --c-primary-dark: #db2777;
+  --c-secondary: #c4b5fd;
+  --c-accent: #fde68a;
+  --c-text: #5b4566;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-bg: var(--c-bg);
+  --color-bg-alt: var(--c-bg-alt);
+  --color-primary: var(--c-primary);
+  --color-primary-dark: var(--c-primary-dark);
+  --color-secondary: var(--c-secondary);
+  --color-accent: var(--c-accent);
+  --color-ink: var(--c-text);
+  --font-sans: var(--font-fredoka), ui-rounded, system-ui, sans-serif;
+  --font-hand: var(--font-caveat), cursive;
+  --font-cutout: var(--font-bagel), var(--font-fredoka), sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--c-text);
+  background:
+    radial-gradient(circle at 15% 10%, var(--c-bg-alt) 0, transparent 40%),
+    radial-gradient(circle at 85% 90%, color-mix(in srgb, var(--c-accent) 50%, transparent) 0, transparent 35%),
+    var(--c-bg);
+  background-attachment: fixed;
+  font-family: var(--font-sans);
+}
+
+.card {
+  @apply rounded-3xl bg-white/80 p-5 shadow-[0_8px_30px_-12px_rgba(219,39,119,0.35)] backdrop-blur;
+}
+
+.input {
+  @apply w-full rounded-2xl border-2 border-primary/50 bg-white px-4 py-3 text-base outline-none transition focus:border-primary-dark focus:ring-4 focus:ring-primary/30;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center rounded-full bg-primary-dark px-6 py-3 font-semibold text-white shadow-lg transition active:scale-95 disabled:opacity-60;
 }

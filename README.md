@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🐱🌙 Vali's Pyjama Party — RSVP
 
-## Getting Started
+Next.js (App Router) + TypeScript + Tailwind + Framer Motion + SQLite (`better-sqlite3`).
 
-First, run the development server:
+## Getting started
 
 ```bash
+cp .env.example .env
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+`data/guests.db` is created automatically on first request, using `data/schema.sql`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Pages
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Route | What |
+|---|---|
+| `/` | Invitation — "No" shrinks & disappears after the last message, "Yes" grows |
+| `/thanks` | Confetti + RSVP form (name, allergies) |
+| `/info` | Informations / Rules / Contacts with a floating bottom nav |
+| `/guest` | Password-protected guest list |
 
-## Learn More
+## Customising
 
-To learn more about Next.js, take a look at the following resources:
+- **All texts, image paths and theme colours**: `data/content.json`
+- **Contacts (names / phone numbers)**: stored in the `contacts` table, managed from `/guest` once logged in
+- **Cat images**: `public/cats/` (see `public/cats/README.md`)
+- **/guest password**: seeded from `GUEST_PAGE_PASSWORD` the first time, stored hashed in the `settings` table. Change it with `npm run set-password -- newPassword`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Tree
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+app/
+  page.tsx              invitation
+  thanks/page.tsx       thank-you + form
+  info/page.tsx         3 sections + bottom nav
+  guest/page.tsx        guest list (password)
+  api/guests/route.ts   POST rsvp, GET list (auth)
+  api/guest-auth/route.ts  login / logout
+  api/contacts/route.ts GET contacts (public), POST/DELETE (auth)
+components/             CatImage, FloatingDecor
+lib/db.ts               SQLite access (server only)
+lib/content.ts          content.json loader
+data/content.json       all texts
+data/schema.sql         tables
+scripts/set-password.mjs
+public/cats/            your cat GIFs
+```
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Note: SQLite needs a persistent disk — host on a VPS / Railway / Fly.io rather than Vercel serverless.

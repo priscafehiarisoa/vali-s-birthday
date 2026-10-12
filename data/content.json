@@ -1,0 +1,221 @@
+{
+  "meta": {
+    "title": "Vali's Birthday Party 🐱🌙",
+    "description": "You're invited to a cozy cat-themed pyjama birthday party!"
+  },
+  "theme": {
+    "background": "#fdf2f8",
+    "backgroundAlt": "#ede9fe",
+    "primary": "#f9a8d4",
+    "primaryDark": "#db2777",
+    "secondary": "#c4b5fd",
+    "accent": "#fde68a",
+    "text": "#5b4566"
+  },
+  "invitation": {
+    "badge": "🎂 Vali's birthday party 🎂",
+    "image": "/cats/cat-its-my-birthday.jpg",
+    "imageAlt": "Cat in front of an explosion: It's my birthday.",
+    "sideImages": [
+      {
+        "src": "/cats/cat-party-hat.jpg",
+        "alt": "Cat with a party hat"
+      },
+      {
+        "src": "/cats/cat-cute-bow.jpg",
+        "alt": "Cute cat with a pink bow"
+      }
+    ],
+    "question": "Do you want to come to my birthday?",
+    "subtitle": "A cozy pyjama party with snacks, movies & lots of cuddles 🌙",
+    "yesLabel": "Yes! 😻",
+    "noLabel": "No",
+    "noSteps": [
+      {
+        "message": "Are you sure? 🙀",
+        "image": "/cats/cat-sad-phone.jpg"
+      },
+      {
+        "message": "Really sure?",
+        "image": "/cats/cat-sad-phone.jpg"
+      },
+      {
+        "message": "You don't like me? 😿",
+        "image": "/cats/sad-guinea-pig.jpg"
+      },
+      {
+        "message": "Think again...",
+        "image": "/cats/sad-guinea-pig.jpg"
+      },
+      {
+        "message": "I'll be very sad...",
+        "image": "/cats/cat-sad-beer.jpg"
+      },
+      {
+        "message": "There will be snacks 🍪",
+        "image": "/cats/cat-sad-beer.jpg"
+      },
+      {
+        "message": "Please? 🥺",
+        "image": "/cats/sad-guinea-pig.jpg"
+      },
+      {
+        "message": "The cat is crying now 😭",
+        "image": "/cats/cat-sad-beer.jpg"
+      },
+      {
+        "message": "Last chance! 💔",
+        "image": "/cats/bunny-knife.jpg"
+      }
+    ]
+  },
+  "thanks": {
+    "video": "/video/happy-cat.mp4",
+    "image": "/cats/cat-dancing.gif",
+    "imageAlt": "A happy dancing cat",
+    "title": "Thank you! 💖",
+    "subtitle": "Yay! The cats are doing a happy dance! Tell me a bit about you 🐾",
+    "nameLabel": "Enter your name",
+    "namePlaceholder": "Just put your name in here babe",
+    "allergiesLabel": "Allergies or special requests",
+    "allergiesPlaceholder": "No milk for this kitty, vegetarian, allergic to cats (oops 🙈)...",
+    "submitLabel": "Send my RSVP 💌",
+    "submittingLabel": "Sending... 🐾",
+    "successMessage": "Got it! See you in your pyjamas 💤",
+    "errorMessage": "Oops, the cat knocked something over 😿 Please try again.",
+    "nameRequired": "Please tell me your name 🐱"
+  },
+  "info": {
+    "title": "Welcome to the slumber party! 🌙",
+    "tabs": {
+      "informations": {
+        "label": "Infos",
+        "icon": "info-circle"
+      },
+      "rules": {
+        "label": "Rules",
+        "icon": "script"
+      },
+      "contacts": {
+        "label": "Contacts",
+        "icon": "phone"
+      }
+    },
+    "informations": {
+      "title": "Informations",
+      "image": "/cats/cat-sleepy.gif",
+      "meme": {
+        "image": "/memes/20-kicks-19.jpg",
+        "alt": "20 kicking 19 off a cliff",
+        "caption": "me leaving my teens like 💅"
+      },
+      "poster": {
+        "photo": "/photos/vali.jpg",
+        "photoAlt": "Vali as a kid",
+        "invitedText": "u are invited to...",
+        "name": "VALI'S",
+        "subtitle": "birthday party",
+        "age": "",
+        "hashtag": "#BIRTHDAY!",
+        "dateLine1": "NOV",
+        "dateLine2": "14, SAT",
+        "time": "3PM",
+        "dressCode": "wear pyjamas!",
+        "address": "SOMEWHERE IN TANJOMBATO",
+        "addressDetail": "*we'll update you on that!",
+        "stickers": [
+          "🐱",
+          "🌙",
+          "🌸",
+          "⭐",
+          "🐾"
+        ]
+      },
+      "items": [
+        {
+          "icon": "calendar-heart",
+          "label": "Date",
+          "value": "Saturday, November 14, 2026"
+        },
+        {
+          "icon": "clock",
+          "label": "Time",
+          "value": "Every one is expected to be there by 3 PM 💤"
+        },
+        {
+          "icon": "map-pin",
+          "label": "Address",
+          "value": "Somewhere in Tanjombato",
+          "link": "https://maps.google.com/?q=12"
+        },
+        {
+          "icon": "shirt",
+          "label": "Dress code",
+          "value": "Bring your pyjamas! 🐾"
+        },
+        {
+          "icon": "backpack",
+          "label": "What to bring",
+          "value": "A blanket maybe, your toothbrush  😹"
+        },
+        {
+          "icon": "coin",
+          "label": "Contribution",
+          "value": "20 000 Ar per person, to give to Lucas 💸"
+        }
+      ]
+    },
+    "rules": {
+      "title": "Rules of the night",
+      "image": "/cats/da-rules.jpg",
+      "important": {
+        "title": "IMPORTANT ⚠️",
+        "text": "What happens in Vegas stays in Vegas /Tout ce qui se passe à vegas reste à vegas  ❌🎰"
+      },
+      "items": [
+        "Do not let Elodie drink / Ne pas laisser Elodie boire ❌🥂",
+        "Do not vomit / Ne pas vomir ❌🤮",
+        "Arrive on time pls / Arriver à l'heure svp ⏰",
+        "Do not stay glued to your phone / Ne pas rester collé à son tel ❌📱",
+        "Don't forget your pyjamas / N'oubliez pas vos pyjamas 🎉"
+      ]
+    },
+    "contacts": {
+      "title": "Contacts",
+      "image": "/cats/cat-calling.jpg",
+      "intro": "Lost? Late? Need a ride? Call one of us 🐱",
+      "callLabel": "Call",
+      "whatsappLabel": "WhatsApp",
+      "loading": "Looking for the cats... 🐱",
+      "error": "Could not load the contacts 😿"
+    }
+  },
+  "guest": {
+    "title": "Guest list 🐾",
+    "passwordLabel": "Secret password",
+    "passwordPlaceholder": "...",
+    "loginLabel": "Let me in 🔑",
+    "wrongPassword": "Wrong password 🙀",
+    "counterLabel": "guests coming",
+    "empty": "No guests yet...  😿",
+    "allergiesTitle": "Allergies / requests",
+    "noAllergies": "Nothing special ✨",
+    "dateLabel": "Answered on",
+    "loading": "Loading ... 🐱",
+    "logoutLabel": "Log out",
+    "contactsTitle": "Contacts shown on the info page 📞",
+    "contactsEmpty": "No contacts yet",
+    "contactNameLabel": "Name",
+    "contactNamePlaceholder": "Anyone",
+    "contactRoleLabel": "Role (optional)",
+    "contactRolePlaceholder": "why is this person a contact?",
+    "contactPhoneLabel": "Phone",
+    "contactPhonePlaceholder": "+261 34 00 000 00",
+    "contactWhatsappLabel": "WhatsApp number (optional, defaults to phone)",
+    "contactWhatsappPlaceholder": "+261 34 00 000 00",
+    "addContactLabel": "Add contact ➕",
+    "deleteContactLabel": "Delete",
+    "confirmDeleteContact": "Delete this contact?",
+    "contactError": "Oops, check the name and phone number 🙀"
+  }
+}

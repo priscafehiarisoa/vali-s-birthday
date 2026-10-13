@@ -50,6 +50,12 @@ export default function GuestPage() {
     }
   }
 
+  async function removeGuest(g: Guest) {
+    if (!confirm(guest.confirmDeleteGuest.replace("{name}", g.name))) return;
+    const res = await fetch(`/api/guests?id=${g.id}`, { method: "DELETE" });
+    if (res.ok) setGuests((await res.json()).guests);
+  }
+
   async function logout() {
     await fetch("/api/guest-auth", { method: "DELETE" });
     setGuests([]);
@@ -116,14 +122,26 @@ export default function GuestPage() {
               {guests.map((g, i) => (
                 <motion.li
                   key={g.id}
+                  layout
                   initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.04 }}
                   className="card flex flex-col gap-2"
                 >
-                  <p className="flex items-center gap-2 text-xl font-bold">
-                    <Icon name="paw" size={22} className="text-primary-dark" /> {g.name}
-                  </p>
+                  <div className="flex items-start justify-between gap-2">
+                    <p className="flex items-center gap-2 text-xl font-bold">
+                      <Icon name="paw" size={22} className="text-primary-dark" /> {g.name}
+                    </p>
+                    <button
+                      type="button"
+                      onClick={() => removeGuest(g)}
+                      aria-label={`${guest.deleteGuestLabel} ${g.name}`}
+                      title={guest.deleteGuestLabel}
+                      className="shrink-0 rounded-full p-2 text-red-500 transition hover:bg-red-50"
+                    >
+                      <Icon name="trash" size={20} />
+                    </button>
+                  </div>
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-wide text-primary-dark">
                       {guest.allergiesTitle}

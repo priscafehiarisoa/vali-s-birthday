@@ -216,6 +216,8 @@
     "addContactLabel": "Add contact ➕",
     "deleteContactLabel": "Delete",
     "confirmDeleteContact": "Delete this contact?",
-    "contactError": "Oops, check the name and phone number 🙀"
+    "contactError": "Oops, check the name and phone number 🙀",
+    "deleteGuestLabel": "Remove guest",
+    "confirmDeleteGuest": "Remove {name} from the guest list? 😿"
   }
 }

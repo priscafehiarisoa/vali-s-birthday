@@ -87,6 +87,10 @@ export function listGuests() {
   return all<Guest>("SELECT * FROM guests ORDER BY created_at DESC, id DESC");
 }
 
+export function deleteGuest(id: number) {
+  return run("DELETE FROM guests WHERE id = ?", [id]);
+}
+
 export function listContacts() {
   return all<Contact>("SELECT id, name, role, phone, whatsapp FROM contacts ORDER BY position, id");
 }

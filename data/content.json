@@ -27,7 +27,7 @@
       }
     ],
     "question": "Do you want to come to my birthday?",
-    "subtitle": "A cozy pyjama party with snacks, movies & lots of cuddles 🌙",
+    "subtitle": "A cozy pyjama party with snacks, movies and karaoke 🌙",
     "yesLabel": "Yes! 😻",
     "noLabel": "No",
     "noSteps": [
@@ -121,7 +121,7 @@
         "dateLine2": "14, SAT",
         "time": "3PM",
         "dressCode": "wear pyjamas!",
-        "address": "SOMEWHERE IN TANJOMBATO",
+        "address": "Espace AREA Malaza Ampitatafika",
         "addressDetail": "*we'll update you on that!",
         "stickers": [
           "🐱",
@@ -140,13 +140,13 @@
         {
           "icon": "clock",
           "label": "Time",
-          "value": "Every one is expected to be there by 3 PM 💤"
+          "value": "Every one is expected to be there by 3 PM, on s'arrangera sur comment y aller ensemble 💤"
         },
         {
           "icon": "map-pin",
           "label": "Address",
-          "value": "Somewhere in Tanjombato",
-          "link": "https://maps.google.com/?q=12"
+          "value": "Espace AREA Malaza Ampitatafika, click here for da map",
+          "link": "https://maps.app.goo.gl/5Jp82hwA8GfKfA5y6"
         },
         {
           "icon": "shirt",
@@ -156,7 +156,7 @@
         {
           "icon": "backpack",
           "label": "What to bring",
-          "value": "A blanket maybe, your toothbrush  😹"
+          "value": "A blanket please, your toothbrush  😹, swimsuit (y a une piscine), des vêtements chauds"
         },
         {
           "icon": "coin",

@@ -1,5 +1,6 @@
 import {
   IconAlertTriangle,
+  IconArrowLeft,
   IconBackpack,
   IconBalloon,
   IconBed,
@@ -7,6 +8,7 @@ import {
   IconCake,
   IconCalendarHeart,
   IconCat,
+  IconCheck,
   IconClock,
   IconCoin,
   IconGift,
@@ -35,6 +37,7 @@ import {
  */
 const ICONS = {
   "alert-triangle": IconAlertTriangle,
+  "arrow-left": IconArrowLeft,
   backpack: IconBackpack,
   balloon: IconBalloon,
   bed: IconBed,
@@ -42,6 +45,7 @@ const ICONS = {
   cake: IconCake,
   "calendar-heart": IconCalendarHeart,
   cat: IconCat,
+  check: IconCheck,
   clock: IconClock,
   coin: IconCoin,
   gift: IconGift,

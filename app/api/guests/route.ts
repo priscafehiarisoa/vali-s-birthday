@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { isAuthed } from "@/lib/auth";
-import { addGuest, deleteGuest, listGuests } from "@/lib/db";
+import { addGuest, deleteGuest, listGuests, setGuestPaid } from "@/lib/db";
 
 export async function POST(req: Request) {
   const body = await req.json().catch(() => null);
@@ -28,5 +28,19 @@ export async function DELETE(req: Request) {
   const id = Number(new URL(req.url).searchParams.get("id"));
   if (!Number.isInteger(id)) return NextResponse.json({ error: "invalid" }, { status: 400 });
   await deleteGuest(id);
+  return NextResponse.json({ guests: await listGuests() });
+}
+
+// Toggle the "contribution paid" checkbox: PATCH /api/guests?id=1  { "paid": true }
+export async function PATCH(req: Request) {
+  if (!(await isAuthed())) {
+    return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  }
+  const id = Number(new URL(req.url).searchParams.get("id"));
+  const body = await req.json().catch(() => null);
+  if (!Number.isInteger(id) || typeof body?.paid !== "boolean") {
+    return NextResponse.json({ error: "invalid" }, { status: 400 });
+  }
+  await setGuestPaid(id, body.paid);
   return NextResponse.json({ guests: await listGuests() });
 }

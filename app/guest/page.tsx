@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { useCallback, useEffect, useState, type FormEvent } from "react";
 import FloatingDecor from "@/components/FloatingDecor";
 import ContactsAdmin from "@/components/ContactsAdmin";
@@ -156,6 +157,10 @@ export default function GuestPage() {
               ))}
             </ul>
           )}
+
+          <Link href="/guest/paid" className="btn">
+            <Icon name="coin" size={20} className="mr-1.5" /> {guest.paidLink}
+          </Link>
 
           <ContactsAdmin />
 

@@ -218,6 +218,29 @@
     "confirmDeleteContact": "Delete this contact?",
     "contactError": "Oops, check the name and phone number 🙀",
     "deleteGuestLabel": "Remove guest",
-    "confirmDeleteGuest": "Remove {name} from the guest list? 😿"
+    "confirmDeleteGuest": "Remove {name} from the guest list? 😿",
+    "paidLink": "Contribution checklist 💸"
+  },
+  "paid": {
+    "title": "Contribution checklist 💸",
+    "subtitle": "Tick the kitties who gave their 20 000 Ar to Lucas 🐾",
+    "amountPerGuest": 20000,
+    "currency": "Ar",
+    "progressLabel": "{paid} / {total} paid",
+    "collectedLabel": "Collected",
+    "expectedLabel": "Expected",
+    "paidBadge": "Paid ✅",
+    "unpaidBadge": "Not yet 🙀",
+    "paidOnLabel": "Paid on",
+    "allPaid": "Everyone paid! The cats are rich 😻",
+    "empty": "No guests yet... 😿",
+    "filterAll": "All",
+    "filterUnpaid": "Not paid",
+    "filterPaid": "Paid",
+    "loading": "Counting the coins... 🪙",
+    "loginRequired": "You need to log in on the guest page first 🔒",
+    "loginLink": "Go to the guest page",
+    "backLink": "Back to the guest list",
+    "error": "Oops, couldn't save that 😿"
   }
 }

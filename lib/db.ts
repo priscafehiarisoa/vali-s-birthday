@@ -14,6 +14,8 @@ export type Guest = {
   id: number;
   name: string;
   allergies: string | null;
+  paid: number;
+  paid_at: string | null;
   created_at: string;
 };
 
@@ -41,6 +43,13 @@ function verifyHash(password: string, stored: string) {
   return candidate.length === expected.length && crypto.timingSafeEqual(candidate, expected);
 }
 
+// Columns added after the first release: CREATE TABLE IF NOT EXISTS doesn't add them to existing tables.
+async function migrate(db: Client) {
+  const cols = (await db.execute("PRAGMA table_info(guests)")).rows.map((r) => r.name);
+  if (!cols.includes("paid")) await db.execute("ALTER TABLE guests ADD COLUMN paid INTEGER NOT NULL DEFAULT 0");
+  if (!cols.includes("paid_at")) await db.execute("ALTER TABLE guests ADD COLUMN paid_at TEXT");
+}
+
 async function init() {
   let url = process.env.TURSO_DATABASE_URL;
   if (!url) {
@@ -49,6 +58,7 @@ async function init() {
   }
   const db = createClient({ url, authToken: process.env.TURSO_AUTH_TOKEN });
   await db.executeMultiple(fs.readFileSync(SCHEMA_PATH, "utf8"));
+  await migrate(db);
 
   const hasPassword = await db.execute("SELECT 1 FROM settings WHERE key = 'guest_password'");
   if (hasPassword.rows.length === 0) {
@@ -89,6 +99,13 @@ export function listGuests() {
 
 export function deleteGuest(id: number) {
   return run("DELETE FROM guests WHERE id = ?", [id]);
+}
+
+export function setGuestPaid(id: number, paid: boolean) {
+  return run(
+    "UPDATE guests SET paid = ?, paid_at = CASE WHEN ? THEN strftime('%Y-%m-%dT%H:%M:%SZ', 'now') END WHERE id = ?",
+    [paid ? 1 : 0, paid ? 1 : 0, id],
+  );
 }
 
 export function listContacts() {

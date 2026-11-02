@@ -3,6 +3,8 @@ CREATE TABLE IF NOT EXISTS guests (
   id         INTEGER PRIMARY KEY AUTOINCREMENT,
   name       TEXT    NOT NULL,
   allergies  TEXT,
+  paid       INTEGER NOT NULL DEFAULT 0,   -- contribution received (0/1)
+  paid_at    TEXT,
   created_at TEXT    NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%SZ', 'now'))
 );
 

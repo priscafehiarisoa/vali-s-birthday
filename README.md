@@ -20,6 +20,7 @@ npm run dev
 | `/thanks` | Confetti + RSVP form (name, allergies) |
 | `/info` | Informations / Rules / Contacts with a floating bottom nav |
 | `/guest` | Password-protected guest list |
+| `/guest/paid` | Contribution checklist (who paid), same password |
 
 ## Customising
 
@@ -36,7 +37,8 @@ app/
   thanks/page.tsx       thank-you + form
   info/page.tsx         3 sections + bottom nav
   guest/page.tsx        guest list (password)
-  api/guests/route.ts   POST rsvp, GET list (auth)
+  guest/paid/page.tsx   contribution checklist
+  api/guests/route.ts   POST rsvp, GET/DELETE/PATCH paid (auth)
   api/guest-auth/route.ts  login / logout
   api/contacts/route.ts GET contacts (public), POST/DELETE (auth)
 components/             CatImage, FloatingDecor

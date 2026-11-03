@@ -223,7 +223,7 @@
   },
   "paid": {
     "title": "Contribution checklist 💸",
-    "subtitle": "Tick the kitties who gave their 20 000 Ar to Lucas 🐾",
+    "subtitle": "🐾",
     "amountPerGuest": 20000,
     "currency": "Ar",
     "progressLabel": "{paid} / {total} paid",

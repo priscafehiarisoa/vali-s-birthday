@@ -95,14 +95,15 @@ export default function PaidChecklistPage() {
                 transition={{ type: "spring", stiffness: 120, damping: 20 }}
               />
             </div>
-            <div className="flex justify-between text-sm">
+            {/* <div className="flex justify-between text-sm">
+            
               <span>
                 {t.collectedLabel} : <b>{money(paidCount * t.amountPerGuest)}</b>
               </span>
               <span className="opacity-70">
                 {t.expectedLabel} : {money(total * t.amountPerGuest)}
               </span>
-            </div>
+            </div> */}
             {total > 0 && paidCount === total && (
               <p className="text-center font-semibold text-green-600">{t.allPaid}</p>
             )}
